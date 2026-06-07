@@ -27,6 +27,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 a,button,select,input,textarea{touch-action:manipulation}
 img{max-width:100%}
+html,body{overflow-x:hidden;max-width:100%}
 body{
   font-family:var(--sans);
   background:var(--bg);
@@ -35,6 +36,8 @@ body{
   line-height:1.75;
   -webkit-font-smoothing:antialiased;
 }
+img{max-width:100%;height:auto}
+.logo-img{height:40px}
 img,svg{vertical-align:middle}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
@@ -311,7 +314,7 @@ ul{list-style:none}
 .cta-sub{margin:18px auto 34px;color:var(--muted);max-width:640px;font-size:16px}
 
 /* ---------- Tables ---------- */
-.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:14px;background:var(--card)}
 table.data{width:100%;border-collapse:collapse;min-width:760px}
 table.data th{
   text-align:left;font-size:12.5px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;
@@ -493,9 +496,17 @@ html[lang="en"] .tier-target{min-height:56px}
   html[lang="ru"] .logo-line1,html[lang="en"] .logo-line1{font-size:11px}
   .lang-btn{padding:6px 8px;font-size:11px}
   .burger{width:40px;height:36px}
-  .hero{padding:122px 0 54px}
-  .page-hero{padding:112px 0 42px}
+  .hero{padding:122px 0 54px;text-align:center}
+  .hero-lead{margin-left:auto;margin-right:auto}
+  .hero-cta{justify-content:center}
+  .hero-meta{justify-content:center;gap:14px}
+  .page-hero{padding:112px 0 42px;text-align:center}
+  .page-sub{margin-left:auto;margin-right:auto}
   .container{padding:0 18px}
   .hero-cta .btn{width:100%;text-align:center}
   .qr-img{width:150px}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat{padding:22px 8px}
+  .stat-num{font-size:25px}
+  .stat-note{display:none}
 }
