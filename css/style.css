@@ -23,8 +23,10 @@
   --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --maxw:1160px;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+a,button,select,input,textarea{touch-action:manipulation}
+img{max-width:100%}
 body{
   font-family:var(--sans);
   background:var(--bg);
@@ -55,10 +57,11 @@ ul{list-style:none}
   max-width:var(--maxw);margin:0 auto;padding:0 24px;
   height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px;
 }
-.logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo{display:flex;align-items:center;gap:12px;flex-shrink:1;min-width:0}
 .logo-mark{width:40px;height:40px;flex-shrink:0}
-.logo-text{line-height:1.25}
-.logo-line1{display:block;font-size:16px;font-weight:700;letter-spacing:1px;color:var(--text);white-space:nowrap}
+.logo-img{width:40px;height:40px;flex-shrink:0;border-radius:9px;background:#fff;padding:3px;object-fit:contain}
+.logo-text{line-height:1.25;min-width:0}
+.logo-line1{display:block;font-size:16px;font-weight:700;letter-spacing:1px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .logo-line2{display:block;font-size:8.5px;letter-spacing:2.2px;color:var(--gold);white-space:nowrap;text-transform:uppercase}
 
 .main-nav ul{display:flex;gap:26px}
@@ -87,6 +90,7 @@ ul{list-style:none}
 .burger{
   display:none;background:none;border:1px solid var(--gold-dim);border-radius:8px;
   width:42px;height:38px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  flex-shrink:0;
 }
 .burger span{display:block;width:18px;height:2px;background:var(--gold);transition:all .3s}
 .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -356,6 +360,7 @@ table.data td.strong{color:var(--text);font-weight:700;white-space:nowrap}
   color:var(--muted-2);font-size:12px;background:rgba(255,255,255,.02);
 }
 .qr-box svg{width:34px;height:34px;stroke:var(--gold-dim);fill:none;stroke-width:1.5}
+.qr-img{width:160px;height:auto;border-radius:12px;background:#fff;padding:8px;display:block}
 
 /* ---------- Forms ---------- */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -430,13 +435,13 @@ html[lang="en"] .tier-target{min-height:56px}
 }
 @media (max-width:960px){
   .main-nav{
-    position:fixed;top:74px;left:0;right:0;background:rgba(8,14,26,.97);
+    position:absolute;top:74px;left:0;right:0;background:rgba(8,14,26,.97);
     border-bottom:1px solid var(--gold-faint);
     max-height:0;overflow:hidden;transition:max-height .4s ease;
   }
-  .main-nav.open{max-height:420px}
+  .main-nav.open{max-height:440px}
   .main-nav ul{flex-direction:column;gap:0;padding:12px 24px 20px}
-  .main-nav a{display:block;padding:13px 4px;font-size:16px;border-bottom:1px solid var(--line)}
+  .main-nav a{display:block;padding:15px 4px;font-size:16px;border-bottom:1px solid var(--line)}
   .main-nav a.active::after{display:none}
   .burger{display:flex}
   .split{grid-template-columns:1fr}
@@ -446,6 +451,7 @@ html[lang="en"] .tier-target{min-height:56px}
 }
 @media (max-width:720px){
   .hero{padding:148px 0 70px}
+  .hero-bell{width:240px;right:-50px;bottom:-40px}
   .hero-title{font-size:34px !important;letter-spacing:1px}
   .hero-slogan{font-size:15px !important;letter-spacing:3px}
   .page-title{font-size:30px !important}
@@ -464,4 +470,32 @@ html[lang="en"] .tier-target{min-height:56px}
   .section{padding:64px 0}
   .quote-block{padding:26px 24px;font-size:16.5px}
   .logo-line2{display:none}
+}
+
+/* ---------- Touch devices: no sticky hover ---------- */
+@media (hover:none){
+  .card:hover,.price-card:hover{transform:none;background:var(--card)}
+  .card:hover{border-color:var(--line)}
+  .price-card.featured:hover{border-color:var(--gold)}
+  .btn-gold:hover{transform:none;box-shadow:0 6px 22px rgba(201,164,92,.25)}
+  .main-nav a:hover{color:var(--muted)}
+  .main-nav a.active:hover{color:var(--gold)}
+}
+
+/* ---------- Small phones: compact header (fix tap targets) ---------- */
+@media (max-width:480px){
+  .header-inner{height:62px;padding:0 12px;gap:8px}
+  .main-nav{top:62px}
+  .logo{gap:8px}
+  .logo-mark,.logo-img{width:32px;height:32px}
+  .logo-img{border-radius:7px;padding:2px}
+  .logo-line1{font-size:13px;letter-spacing:0}
+  html[lang="ru"] .logo-line1,html[lang="en"] .logo-line1{font-size:11px}
+  .lang-btn{padding:6px 8px;font-size:11px}
+  .burger{width:40px;height:36px}
+  .hero{padding:122px 0 54px}
+  .page-hero{padding:112px 0 42px}
+  .container{padding:0 18px}
+  .hero-cta .btn{width:100%;text-align:center}
+  .qr-img{width:150px}
 }
