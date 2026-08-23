@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /cms/
+Disallow: /bin/
 
 Sitemap: https://www.rceca.org/sitemap.xml
-

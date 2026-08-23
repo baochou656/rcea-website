@@ -1,0 +1,2 @@
+<?php
+declare(strict_types=1);require_once dirname(__DIR__).'/cms/bootstrap.php';$rows=db()->query("SELECT slug,member_type,section,name_zh,name_ru,name_en,role_zh,role_ru,role_en,organization_zh,organization_ru,organization_en,summary_zh,summary_ru,summary_en,photo_path,is_demo FROM members WHERE status='published' AND deleted_at IS NULL ORDER BY section,sort_order,id")->fetchAll();json_response(['ok'=>true,'members'=>$rows]);

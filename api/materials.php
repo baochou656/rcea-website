@@ -1,0 +1,2 @@
+<?php
+declare(strict_types=1);require_once dirname(__DIR__).'/cms/bootstrap.php';$rows=db()->query("SELECT id,title_zh,title_ru,title_en,description_zh,description_ru,description_en,category,original_name,storage_name,mime_type,file_size,updated_at FROM materials WHERE status='published' AND deleted_at IS NULL ORDER BY sort_order,id DESC")->fetchAll();foreach($rows as &$row){$row['download_url']='/uploads/materials/'.rawurlencode($row['storage_name']);unset($row['storage_name']);}json_response(['ok'=>true,'materials'=>$rows]);

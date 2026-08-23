@@ -1,0 +1,1 @@
+(function(){"use strict";var b=document.querySelector('.menu-toggle'),s=document.querySelector('.sidebar');if(b&&s){b.addEventListener('click',function(){s.classList.toggle('open')});}document.addEventListener('click',function(e){var button=e.target.closest('[data-confirm]');if(button&&!window.confirm(button.getAttribute('data-confirm'))){e.preventDefault();}});})();

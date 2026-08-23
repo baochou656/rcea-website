@@ -1,0 +1,2 @@
+<?php
+declare(strict_types=1);require_once dirname(__DIR__).'/cms/bootstrap.php';$slug=slugify((string)($_GET['slug']??''));$s=db()->prepare("SELECT slug,member_type,section,name_zh,name_ru,name_en,role_zh,role_ru,role_en,organization_zh,organization_ru,organization_en,summary_zh,summary_ru,summary_en,bio_zh,bio_ru,bio_en,photo_path,is_demo FROM members WHERE slug=? AND status='published' AND deleted_at IS NULL LIMIT 1");$s->execute([$slug]);$row=$s->fetch();if(!$row){json_response(['ok'=>false,'error'=>'not_found'],404);}json_response(['ok'=>true,'member'=>$row]);

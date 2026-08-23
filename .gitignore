@@ -1,4 +1,6 @@
-.DS_Store
-.wtest
-img/members/demo-portraits-source.png
-
+/var/
+/uploads/*
+!/uploads/.gitkeep
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
