@@ -501,7 +501,7 @@ table.data td.strong{color:var(--text);font-weight:700;white-space:nowrap}
 .profile-panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px}
 .profile-panel + .profile-panel{margin-top:22px}
 .profile-panel h2{font-family:var(--serif);font-size:24px;margin-bottom:14px}
-.profile-panel p{color:var(--muted);font-size:14.5px}
+.profile-panel p{color:var(--muted);font-size:14.5px;white-space:pre-line}
 .profile-focus{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
 .profile-focus span{padding:6px 11px;border-radius:999px;background:var(--gold-faint);border:1px solid var(--gold-dim);color:var(--gold-bright);font-size:12.5px}
 .profile-contrib{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
