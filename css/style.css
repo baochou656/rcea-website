@@ -451,6 +451,11 @@ table.data td.strong{color:var(--text);font-weight:700;white-space:nowrap}
 .member-photo-wrap{position:relative;aspect-ratio:4/4.5;overflow:hidden;background:#0d1828}
 .member-photo{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
 .member-card:hover .member-photo{transform:scale(1.025)}
+#council .member-photo{
+  width:calc(100% - 20px);height:calc(100% - 20px);margin:10px;
+  object-fit:contain;object-position:center;border-radius:10px;
+}
+#council .member-card:hover .member-photo{transform:scale(1.015)}
 .member-demo-badge{
   position:absolute;top:12px;left:12px;padding:4px 9px;border-radius:999px;
   background:rgba(7,13,24,.84);border:1px solid var(--gold-dim);color:var(--gold-bright);
