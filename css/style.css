@@ -472,6 +472,20 @@ table.data td.strong{color:var(--text);font-weight:700;white-space:nowrap}
 .member-summary{margin-top:10px;color:var(--muted);font-size:13.5px;line-height:1.7;flex:1}
 .member-more{margin-top:16px;color:var(--gold-bright);font-size:13px}
 .member-company-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.member-directory-group{
+  margin-top:34px;padding:28px;border:1px solid var(--line);border-radius:20px;
+  background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(13,25,43,.72));
+}
+.member-directory-group + .member-directory-group{margin-top:28px}
+.member-directory-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px}
+.member-directory-index{
+  flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:42px;height:42px;
+  border:1px solid var(--gold-dim);border-radius:12px;background:var(--gold-faint);
+  color:var(--gold-bright);font-family:var(--serif);font-size:14px;letter-spacing:1px;
+}
+.member-directory-head h3{font-family:var(--serif);font-size:24px;line-height:1.25}
+.member-directory-head p{margin-top:6px;color:var(--muted);font-size:13.5px}
+.member-directory-fallback{grid-column:1/-1;color:var(--muted-2);font-size:13px}
 .member-company-card{
   border:1px solid var(--line);border-radius:16px;padding:26px;background:var(--card);
   transition:all .3s;display:flex;flex-direction:column;
@@ -603,6 +617,8 @@ html[lang="en"] .tier-target{min-height:56px}
   .logo-line2{display:none}
   .member-grid{grid-template-columns:repeat(2,1fr)}
   .member-company-grid{grid-template-columns:1fr}
+  .member-directory-group{padding:22px 18px}
+  .member-directory-head h3{font-size:21px}
   .org-level{grid-template-columns:1fr;gap:10px}
   .profile-page{padding:108px 0 64px}
   .profile-hero-card{grid-template-columns:1fr}
