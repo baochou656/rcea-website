@@ -567,7 +567,10 @@ html[lang="en"] .main-nav a{font-size:14px;letter-spacing:0}
 html[lang="en"] .tier-target{min-height:56px}
 
 /* ---------- Responsive ---------- */
-@media (max-width:1220px){
+@media (max-width:1399px){
+  .site-header .logo-line2{display:none}
+}
+@media (max-width:1280px){
   .cols-4,.cols-5{grid-template-columns:repeat(3,1fr)}
   .pricing-grid{grid-template-columns:repeat(2,1fr)}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
