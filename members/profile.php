@@ -7,4 +7,42 @@ $section=['council'=>['理事会','Совет','Council'],'secretariat'=>['秘�
 <main class="profile-page"><div class="container"><nav class="breadcrumb"><a href="../index.html" data-zh="首页" data-ru="Главная" data-en="Home">首页</a><span class="breadcrumb-sep">/</span><a href="../members.html" data-zh="协会成员" data-ru="Члены" data-en="Members">协会成员</a><span class="breadcrumb-sep">/</span><span <?=attrs($m,'name')?>><?=e($m['name_zh'])?></span></nav>
 <?php if((int)$m['is_demo']===1):?><div class="demo-notice"><div class="demo-notice-mark">!</div><div><strong data-zh="演示资料 · 待秘书处确认" data-ru="Демонстрационные данны" data-en="Demo content · Confirmation required">演示资料 · 待秘书处确认</strong><span data-zh="本页为演示资料，不代表真实任职或会员关系。" data-ru="Данные вымышлены и не отражают реальное членство." data-en="This is fictional demo content and does not represent a real appointment or membership.">本页为演示资料，不代表真实任职或会员关系。</span></div></div><?php endif;?>
 <section class="profile-hero-card" style="margin-top:24px"><div class="profile-portrait <?=$m['member_type']==='organization'?'profile-company-portrait':''?>"><?php if($m['photo_path']):?><img src="<?=e($m['photo_path'])?>" alt="<?=e($m['name_zh'])?>"><?php else:?><div class="company-mark <?=$m['member_type']==='person'?'profile-member-placeholder':''?>"><?=e(member_initials($m))?></div><?php endif;?></div><div class="profile-hero-copy"><div class="profile-kind" data-zh="<?=e($section[0])?>" data-ru="<?=e($section[1])?>" data-en="<?=e($section[2])?>"><?=e($section[0])?></div><h1 class="profile-name" <?=attrs($m,'name')?>><?=e($m['name_zh'])?></h1><div class="profile-role" <?=attrs($m,'role')?>><?=e($m['role_zh'])?></div><?php if($m['organization_zh']):?><div class="profile-meta"><span><i></i><b <?=attrs($m,'organization')?>><?=e($m['organization_zh'])?></b></span></div><?php endif;?><p class="profile-lead" <?=attrs($m,'summary')?>><?=e($m['summary_zh'])?></p></div></section>
-<div class="profile-content"><section class="profile-panel"><h2 data-zh="成员简介" data-ru="Профиль" data-en="Member Profile">成员简介</h2><p <?=attrs($m,'bio')?>><?=e($m['bio_zh']?:$m['summary_zh'])?></p></section></div><div class="profile-back"><a class="btn btn-ghost" href="../members.html" data-zh="← 返回协会成员" data-ru="← Вернуться к членам" data-en="← Back to Members">← 返回协会成员</a></div></div></main><footer class="site-footer"><div class="container"><div class="footer-h" data-zh="联系方式" data-ru="Контакты" data-en="Contact">联系方式</div><ul class="footer-contact"><li><i>◆</i><a href="mailto:gujiamei@rceca.org" data-zh="邮箱：gujiamei@rceca.org" data-ru="Электронная почта: gujiamei@rceca.org" data-en="Email: gujiamei@rceca.org">邮箱：gujiamei@rceca.org</a></li></ul><div class="foot-bottom">© <span data-year>2026</span> RCECA</div></div></footer></body></html>
+<div class="profile-content"><section class="profile-panel"><h2 data-zh="成员简介" data-ru="Профиль" data-en="Member Profile">成员简介</h2><p <?=attrs($m,'bio')?>><?=e($m['bio_zh']?:$m['summary_zh'])?></p></section></div><div class="profile-back"><a class="btn btn-ghost" href="../members.html" data-zh="← 返回协会成员" data-ru="← Вернуться к членам" data-en="← Back to Members">← 返回协会成员</a></div></div></main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="../index.html">
+        <img class="logo-img" src="../img/logo-mark.png" alt="RCECA" width="40" height="40">
+        <span class="logo-text">
+          <span class="logo-line1" data-zh="俄中电子商务协会" data-ru="Ассоциация «Россия — Китай»" data-en="Russia-China E-Commerce">俄中电子商务协会</span>
+          <span class="logo-line2" data-zh="Russia-China E-Commerce Association" data-ru="Электронная коммерция" data-en="Association">Russia-China E-Commerce Association</span>
+        </span>
+      </a>
+      <p class="footer-desc" data-zh="搭建中俄数字贸易桥梁——赋能会员、链接中俄、共赢未来。" data-ru="Мост цифровой торговли между Россией и Китаем: поддержка участников, объединение двух стран, общее будущее." data-en="The bridge of Russia-China digital trade — empowering members, connecting both nations, winning the future together.">搭建中俄数字贸易桥梁——赋能会员、链接中俄、共赢未来。</p>
+    </div>
+    <div>
+      <div class="footer-h" data-zh="快速导航" data-ru="Навигация" data-en="Navigation">快速导航</div>
+      <ul class="footer-links">
+        <li><a href="../about.html" data-zh="关于协会" data-ru="Об ассоциации" data-en="About">关于协会</a></li>
+        <li><a href="../membership.html" data-zh="会员体系" data-ru="Членство" data-en="Membership">会员体系</a></li>
+        <li><a href="../members.html" data-zh="协会成员" data-ru="Руководство и члены" data-en="Association Members">协会成员</a></li>
+        <li><a href="../business.html" data-zh="业务板块" data-ru="Направления" data-en="Business">业务板块</a></li>
+        <li><a href="../network.html" data-zh="分会网络" data-ru="Сеть отделений" data-en="Network">分会网络</a></li>
+        <li><a href="../contact.html" data-zh="联系我们" data-ru="Контакты" data-en="Contact">联系我们</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-h" data-zh="联系方式" data-ru="Контакты" data-en="Contact">联系方式</div>
+      <ul class="footer-contact">
+        <li><i>◆</i><span data-zh="莫斯科总部:Киевское шоссе, 22-й км, 4с1кА, 8 подъезд" data-ru="Штаб-квартира: Москва, Киевское шоссе, 22-й километр, 4с1кА, подъезд 8" data-en="HQ: 22nd km Kievskoye Hwy, 4s1kA, Entrance 8, Moscow, Russia">莫斯科总部:Киевское шоссе, 22-й км, 4с1кА, 8 подъезд</span></li>
+        <li><i>◆</i><span data-zh="运营中心:深圳市龙岗区坂田街道乐荟中心 3 栋 14 层 B2" data-ru="Операционный центр: Шэньчжэнь, р-н Лунган, Баньтянь, Lehui Center, корп. 3, эт. 14, B2" data-en="China Ops: Rm B2, 14/F, Bldg 3, Lehui Center, Bantian, Longgang, Shenzhen">运营中心:深圳市龙岗区坂田街道乐荟中心 3 栋 14 层 B2</span></li>
+        <li><i>◆</i><span data-zh="公众号 / 视频号:俄中电子商务协会" data-ru="WeChat: 俄中电子商务协会" data-en="WeChat Official Account: 俄中电子商务协会">公众号 / 视频号:俄中电子商务协会</span></li>
+        <li><i>◆</i><a href="mailto:gujiamei@rceca.org" data-zh="邮箱：gujiamei@rceca.org" data-ru="Электронная почта: gujiamei@rceca.org" data-en="Email: gujiamei@rceca.org">邮箱：gujiamei@rceca.org</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    © <span data-year>2026</span> <span data-zh="俄中电子商务协会 · 版权所有" data-ru="Российско-Китайская ассоциация электронной коммерции. Все права защищены." data-en="Russia-China E-Commerce Association. All rights reserved.">俄中电子商务协会 · 版权所有</span>
+  </div>
+</footer>
+</body></html>
